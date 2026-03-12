@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LP2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="CategoriaID" />
+    </Key>
+    <Property Name="CategoriaID" Type="Int32" Nullable="false" />
+    <Property Name="NombreCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="Self.FK_Producto_Categoria" FromRole="Categorias" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ClienteID" />
+    </Key>
+    <Property Name="ClienteID" Type="Int32" Nullable="false" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CorreoElectronico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Facturas" Relationship="Self.FK_Factura_Cliente" FromRole="Clientes" ToRole="Facturas" />
+  </EntityType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="CompraID" />
+    </Key>
+    <Property Name="CompraID" Type="Int32" Nullable="false" />
+    <Property Name="ProveedorID" Type="Int32" Nullable="false" />
+    <Property Name="FechaCompra" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="DetallesCompras" Relationship="Self.FK__DetallesC__Compr__5DCAEF64" FromRole="Compras" ToRole="DetallesCompras" />
+    <NavigationProperty Name="Proveedore" Relationship="Self.FK_Compra_Proveevor" FromRole="Compras" ToRole="Proveedores" />
+  </EntityType>
+  <EntityType Name="DetallesCompra">
+    <Key>
+      <PropertyRef Name="DetallesCompraID" />
+    </Key>
+    <Property Name="DetallesCompraID" Type="Int32" Nullable="false" />
+    <Property Name="CompraID" Type="Int32" Nullable="false" />
+    <Property Name="ProductoID" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="CostoUnitario" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Impuesto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="SubTotal" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Compra" Relationship="Self.FK__DetallesC__Compr__5DCAEF64" FromRole="DetallesCompras" ToRole="Compras" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK__DetallesC__Produ__5EBF139D" FromRole="DetallesCompras" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="DetallesFactura">
+    <Key>
+      <PropertyRef Name="DetallesId" />
+    </Key>
+    <Property Name="DetallesId" Type="Int32" Nullable="false" />
+    <Property Name="FacturaID" Type="Int32" Nullable="false" />
+    <Property Name="ProductoID" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Impuesto" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="SubTotal" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK_DetallesFactura_Factura" FromRole="DetallesFacturas" ToRole="Facturas" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_DetallesFactura_Producto" FromRole="DetallesFacturas" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="FacturaID" />
+    </Key>
+    <Property Name="FacturaID" Type="Int32" Nullable="false" />
+    <Property Name="ClienteID" Type="Int32" Nullable="false" />
+    <Property Name="FechaFactura" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Total" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_Factura_Cliente" FromRole="Facturas" ToRole="Clientes" />
+    <NavigationProperty Name="DetallesFacturas" Relationship="Self.FK_DetallesFactura_Factura" FromRole="Facturas" ToRole="DetallesFacturas" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="ProductoID" />
+    </Key>
+    <Property Name="ProductoID" Type="Int32" Nullable="false" />
+    <Property Name="NombreProducto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Stock" Type="Int32" Nullable="false" />
+    <Property Name="CategoriaID" Type="Int32" />
+    <NavigationProperty Name="Categoria" Relationship="Self.FK_Producto_Categoria" FromRole="Productos" ToRole="Categorias" />
+    <NavigationProperty Name="DetallesCompras" Relationship="Self.FK__DetallesC__Produ__5EBF139D" FromRole="Productos" ToRole="DetallesCompras" />
+    <NavigationProperty Name="DetallesFacturas" Relationship="Self.FK_DetallesFactura_Producto" FromRole="Productos" ToRole="DetallesFacturas" />
+  </EntityType>
+  <EntityType Name="Proveedore">
+    <Key>
+      <PropertyRef Name="ProveedorID" />
+    </Key>
+    <Property Name="ProveedorID" Type="Int32" Nullable="false" />
+    <Property Name="ProveedorNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoElectronico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Compras" Relationship="Self.FK_Compra_Proveevor" FromRole="Proveedores" ToRole="Compras" />
+  </EntityType>
+  <Association Name="FK_Producto_Categoria">
+    <End Role="Categorias" Type="Self.Categoria" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="CategoriaID" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="CategoriaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Factura_Cliente">
+    <End Role="Clientes" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Facturas" Type="Self.Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="ClienteID" />
+      </Principal>
+      <Dependent Role="Facturas">
+        <PropertyRef Name="ClienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetallesC__Compr__5DCAEF64">
+    <End Role="Compras" Type="Self.Compra" Multiplicity="1" />
+    <End Role="DetallesCompras" Type="Self.DetallesCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compras">
+        <PropertyRef Name="CompraID" />
+      </Principal>
+      <Dependent Role="DetallesCompras">
+        <PropertyRef Name="CompraID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compra_Proveevor">
+    <End Role="Proveedores" Type="Self.Proveedore" Multiplicity="1" />
+    <End Role="Compras" Type="Self.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="ProveedorID" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="ProveedorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetallesC__Produ__5EBF139D">
+    <End Role="Productos" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetallesCompras" Type="Self.DetallesCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="ProductoID" />
+      </Principal>
+      <Dependent Role="DetallesCompras">
+        <PropertyRef Name="ProductoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetallesFactura_Factura">
+    <End Role="Facturas" Type="Self.Factura" Multiplicity="1" />
+    <End Role="DetallesFacturas" Type="Self.DetallesFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facturas">
+        <PropertyRef Name="FacturaID" />
+      </Principal>
+      <Dependent Role="DetallesFacturas">
+        <PropertyRef Name="FacturaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetallesFactura_Producto">
+    <End Role="Productos" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetallesFacturas" Type="Self.DetallesFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="ProductoID" />
+      </Principal>
+      <Dependent Role="DetallesFacturas">
+        <PropertyRef Name="ProductoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LP2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="Self.Categoria" />
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Compras" EntityType="Self.Compra" />
+    <EntitySet Name="DetallesCompras" EntityType="Self.DetallesCompra" />
+    <EntitySet Name="DetallesFacturas" EntityType="Self.DetallesFactura" />
+    <EntitySet Name="Facturas" EntityType="Self.Factura" />
+    <EntitySet Name="Productos" EntityType="Self.Producto" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedore" />
+    <AssociationSet Name="FK_Producto_Categoria" Association="Self.FK_Producto_Categoria">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Factura_Cliente" Association="Self.FK_Factura_Cliente">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Facturas" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetallesC__Compr__5DCAEF64" Association="Self.FK__DetallesC__Compr__5DCAEF64">
+      <End Role="Compras" EntitySet="Compras" />
+      <End Role="DetallesCompras" EntitySet="DetallesCompras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compra_Proveevor" Association="Self.FK_Compra_Proveevor">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetallesC__Produ__5EBF139D" Association="Self.FK__DetallesC__Produ__5EBF139D">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetallesCompras" EntitySet="DetallesCompras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetallesFactura_Factura" Association="Self.FK_DetallesFactura_Factura">
+      <End Role="Facturas" EntitySet="Facturas" />
+      <End Role="DetallesFacturas" EntitySet="DetallesFacturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetallesFactura_Producto" Association="Self.FK_DetallesFactura_Producto">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetallesFacturas" EntitySet="DetallesFacturas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a7f8d94434d742098b3951ce3712ec38" Name="Diagram1">
+        <EntityTypeShape EntityType="LP2Model.Categoria" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LP2Model.Cliente" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LP2Model.Compra" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LP2Model.DetallesCompra" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LP2Model.DetallesFactura" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LP2Model.Factura" Width="1.5" PointX="6" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LP2Model.Producto" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LP2Model.Proveedore" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="LP2Model.FK_Producto_Categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="LP2Model.FK_Factura_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="LP2Model.FK__DetallesC__Compr__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="LP2Model.FK_Compra_Proveevor" ManuallyRouted="false" />
+        <AssociationConnector Association="LP2Model.FK__DetallesC__Produ__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="LP2Model.FK_DetallesFactura_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="LP2Model.FK_DetallesFactura_Producto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
