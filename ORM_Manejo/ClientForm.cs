@@ -35,7 +35,6 @@ namespace ORM_Manejo
                     Email = c.CorreoElectronico,
                     Telefono = c.Telefono,
                     Direccion = c.Direccion
-
                 }).ToList();
 
             Screen.DataSource = Clientes;
@@ -45,7 +44,6 @@ namespace ORM_Manejo
             Screen.Columns["Email"].Width = 140;
             Screen.Columns["Telefono"].Width = 140;
             Screen.Columns["Direccion"].Width = 140;
-
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -58,42 +56,42 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un Numero Positivo");
                 textInsertID.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(name))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Nombre");
+                MessageBox.Show("Llenar El Campo Nombre");
                 textInsertName.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(email))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Correo Electronico");
+                MessageBox.Show("Llenar El Campo Correo Electronico");
                 textInsertName.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(phone))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Telefono");
+                MessageBox.Show("Llenar El Campo Telefono");
                 textInsertName.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(address))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Direccion");
+                MessageBox.Show("Llenar El Campo Direccion");
                 textInsertName.Focus();
                 return;
             }
 
             if (db.Clientes.Any( c => c.ClienteID == id))
             {
-                MessageBox.Show($"Ya Existe Un cliente con el ID {id}");
+                MessageBox.Show($"Ya Existe Un Cliente Con El ID {id}");
                 textInsertID.Focus();
                 return;
             }
@@ -112,7 +110,7 @@ namespace ORM_Manejo
                 db.Clientes.Add(newClient);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Insertar");
+                MessageBox.Show("Exito Al Insertar");
 
                 textInsertID.Clear();
                 textInsertName.Clear();
@@ -123,7 +121,7 @@ namespace ORM_Manejo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Insertar");
+                MessageBox.Show("Error Al Insertar");
             }
 
         }
@@ -134,7 +132,7 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un Numero Positivo");
                 textDeleteID.Focus();
                 return;
             }
@@ -145,14 +143,14 @@ namespace ORM_Manejo
 
                 if (client == null)
                 {
-                    MessageBox.Show($"No existe cliente con el ID {id}");
+                    MessageBox.Show($"No Existe Cliente Con El ID {id}");
                     return;
                 }
 
                 db.Clientes.Remove(client);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Eliminar");
+                MessageBox.Show("Exito Al Eliminar");
 
                 textDeleteID.Clear();
                 LoadClients();
@@ -160,7 +158,7 @@ namespace ORM_Manejo
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al Eliminar");
+                MessageBox.Show("Error Al Eliminar");
             }
 
         }
@@ -175,35 +173,35 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un numero Positivo");
                 textUpdateID.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(newName))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Nombre");
+                MessageBox.Show("Llenar El Campo Nombre");
                 textUpdateName.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(newEmail))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Correo Electronico");
+                MessageBox.Show("Llenar El Campo Correo Electronico");
                 textUpdateEmail.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(newPhone))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Telefono");
+                MessageBox.Show("Llenar El Campo Telefono");
                 textUpdatePhone.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(newAddress))
             {
-                MessageBox.Show("Introduzca Datos en el Campo Direccion");
+                MessageBox.Show("Llenar El Campo Direccion");
                 textUpdateAddress.Focus();
                 return;
             }
@@ -214,7 +212,7 @@ namespace ORM_Manejo
 
                 if (client == null) 
                 {
-                    MessageBox.Show($"No existe un cliente con el ID {id}");
+                    MessageBox.Show($"No Existe Un Cliente Con El ID {id}");
                     return;
                 }
 
@@ -225,7 +223,7 @@ namespace ORM_Manejo
 
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Actualizar");
+                MessageBox.Show("Exito Al Actualizar");
 
                 textUpdateID.Clear();
                 textUpdateName.Clear();
@@ -236,7 +234,7 @@ namespace ORM_Manejo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Actualizar");
+                MessageBox.Show("Error Al Actualizar");
             }
 
         }

@@ -54,35 +54,35 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un Numero Positivo");
                 textInsertID.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(name))
             {
-                MessageBox.Show("Debe Introducir valor en el Campo Nombre");
+                MessageBox.Show("Llenar El Campo Nombre");
                 textInsertName.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(phone))
             {
-                MessageBox.Show("Debe Introducir valor en el campo Telefono");
+                MessageBox.Show("Llenar El Campo Telefono");
                 textInsertPhone.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(email))
             {
-                MessageBox.Show("Debe introducir valor en el Campo Correo Electronico");
+                MessageBox.Show("Llenar El Campo Correo Electronico");
                 textInsertEmail.Focus();
                 return;
             }
 
             if (db.Proveedores.Any(c => c.ProveedorID == id))
             {
-                MessageBox.Show($"Ya existe un proveedor con el ID {id}");
+                MessageBox.Show($"Ya Existe Un Proveedor Con El ID {id}");
                 textInsertID.Focus();
                 return;
             }
@@ -101,7 +101,7 @@ namespace ORM_Manejo
                 db.Proveedores.Add(newSupplier);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Insertar");
+                MessageBox.Show("Exito Al Insertar");
 
                 textInsertID.Clear();
                 textInsertName.Clear();
@@ -111,7 +111,7 @@ namespace ORM_Manejo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Insertar");
+                MessageBox.Show("Error Al Insertar");
             }
 
         }
@@ -122,7 +122,7 @@ namespace ORM_Manejo
             
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un Numero Positivo");
                 textDeleteID.Focus();
                 return;
             }
@@ -133,14 +133,14 @@ namespace ORM_Manejo
 
                 if (supplier == null)
                 {
-                    MessageBox.Show($"Ya no existe proveedor con el ID {id}");
+                    MessageBox.Show($"Ya No Existe Proveedor Con El ID {id}");
                     return;
                 }
 
                 db.Proveedores.Remove(supplier);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Eliminar");
+                MessageBox.Show("Exito Al Eliminar");
 
                 textDeleteID.Clear();
                 LoadSupplier();
@@ -149,7 +149,7 @@ namespace ORM_Manejo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error a Eliminar");
+                MessageBox.Show("Error Al Eliminar");
             }
 
 
@@ -165,21 +165,21 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un Numero Positivo");
                 textUpdateID.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(name))
             {
-                MessageBox.Show("LLenar El Campo Nombre");
+                MessageBox.Show("Llenar El Campo Nombre");
                 textUpdateName.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(phone))
             {
-                MessageBox.Show("LLennar EL Campo Telefono");
+                MessageBox.Show("Llennar EL Campo Telefono");
                 textUpdatePhone.Focus();
                 return;
             }
@@ -197,7 +197,7 @@ namespace ORM_Manejo
 
                 if (supplier == null) 
                 {
-                    MessageBox.Show($"No existe un Proveedor con el ID {id}");
+                    MessageBox.Show($"No Existe Un Proveedor Con El ID {id}");
                     return;
                 }
 
@@ -207,7 +207,7 @@ namespace ORM_Manejo
 
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Actualizar");
+                MessageBox.Show("Exito Al Actualizar");
 
                 textUpdateID.Clear();
                 textUpdateName.Clear();
@@ -217,7 +217,7 @@ namespace ORM_Manejo
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Error al Actualizada");
+                MessageBox.Show("Error Al Actualizada");
             }
 
         }

@@ -29,111 +29,102 @@ namespace ORM_Manejo
 
         private void LoadCategories() 
         {
-            var listaCategorias = db.Categorias.OrderBy(c => c.CategoriaID)
+            var ListCategories = db.Categorias.OrderBy(c => c.CategoriaID)
                 .Select(c => new
                 {
                     ID = c.CategoriaID,
-                    Nombre = c.NombreCategoria,
-                    
+                    Nombre = c.NombreCategoria,           
                 }).ToList();
 
-            Screen.DataSource = listaCategorias;
+            Screen.DataSource = ListCategories;
 
             Screen.Columns["ID"].Width = 185;
             Screen.Columns["Nombre"].Width = 330;
-
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
             string IDText = textInsertID.Text.Trim();
             string name = textInsertName.Text.Trim();
-
-            
+    
             if (string.IsNullOrEmpty(IDText) || !int.TryParse(IDText, out int ID) || ID < 1) 
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("EL ID Debe Ser Un Numero Positivo");
                 textInsertID.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(name))
             {
-                MessageBox.Show("Debe ingresar el nombre de la categoria");
+                MessageBox.Show("Llenar Campo Nombre");
                 textInsertName.Focus();
                 return;
             }
 
             if (db.Categorias.Any( c => c.CategoriaID == ID)) 
             {
-                MessageBox.Show($"Ya existe una categoría con el ID {ID}.");
+                MessageBox.Show($"Ya Existe Una Categoria Con El ID {ID}.");
                 textInsertID.Focus();
                 return;
             }
 
             try
             {
-
-                var newCategoria = new Categoria
+                var Category = new Categoria
                 {
-                    CategoriaID = Convert.ToInt32(textInsertID.Text.Trim()),
-                    NombreCategoria = textInsertName.Text.Trim()
+                    CategoriaID = Convert.ToInt32(IDText),
+                    NombreCategoria = name
                 };
 
-
-                db.Categorias.Add(newCategoria);
+                db.Categorias.Add(Category);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al insertar");
+                MessageBox.Show("Exito Al Insertar");
 
                 textInsertID.Clear();
                 textInsertName.Clear();
                 LoadCategories();
-
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Error al insertar");
+                MessageBox.Show("Error Al Insertar");
             }
 
             }
 
         private void buttonDelete_Click(object sender, EventArgs e)
-        {
-         
+        { 
             string IDText = textDeleteID.Text.Trim();
 
             if (string.IsNullOrEmpty(IDText) || !int.TryParse(IDText, out int ID) || ID < 1) 
             {
-                MessageBox.Show("Debe ingresar una ID Valida");
+                MessageBox.Show("Debe Ingresar Un ID Valido");
                 textDeleteID.Focus();
                 return;
             }
 
             try
             {
-                var categoria = db.Categorias.Find(ID);
+                var category = db.Categorias.Find(ID);
 
-                if (categoria == null)
+                if (category == null)
                 {
-                    MessageBox.Show($"No Existe la Categoria con la ID {ID}");
+                    MessageBox.Show($"No Existe La Categoria Con La ID {ID}");
                     return;
                 }
 
-                db.Categorias.Remove(categoria);
+                db.Categorias.Remove(category);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Eliminar");
+                MessageBox.Show("Exito Al Eliminar");
 
                 textDeleteID.Clear();
-                LoadCategories();
-                
+                LoadCategories();          
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Error al Eliminar");
+                MessageBox.Show("Error Al Eliminar");
             }
-
 
         }
 
@@ -144,32 +135,32 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDText) || !int.TryParse(IDText, out int ID) || ID < 1)
             {
-                MessageBox.Show("Ingrese un ID valido");
+                MessageBox.Show("Ingrese Un ID Valido");
                 textUpdateID.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(newName)) 
             {
-                MessageBox.Show("Ingrese un nuevo nombre");
+                MessageBox.Show("Llene El Campo Nombre");
                 textUpdateName.Focus();
                 return;
             }
 
             try
             {
-                var categoria = db.Categorias.Find(ID);
+                var category = db.Categorias.Find(ID);
 
-                if (categoria == null)
+                if (category == null)
                 {
-                    MessageBox.Show($"No existe una categoria con el ID {ID}");
+                    MessageBox.Show($"No Existe Una Categoria Con El ID {ID}");
                     return;
                 }
 
-                categoria.NombreCategoria = newName; ;
+                category.NombreCategoria = newName; ;
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Actualizar Categoria");
+                MessageBox.Show("Exito Al Actualizar Categoria");
 
                 textUpdateID.Clear();
                 textUpdateName.Clear();
@@ -177,7 +168,7 @@ namespace ORM_Manejo
 
             }catch (Exception ex) 
             {
-                MessageBox.Show("Error al Actualizar Categoria");
+                MessageBox.Show("Error Al Actualizar Categoria");
             }
 
         }

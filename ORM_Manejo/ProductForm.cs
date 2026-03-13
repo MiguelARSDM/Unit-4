@@ -78,7 +78,7 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un Numero Positivo");
                 textInsertID.Clear();
                 return;
             }
@@ -92,35 +92,35 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(price) || !decimal.TryParse(price, out decimal prc) || prc < 1)
             {
-                MessageBox.Show("El precio debe ser un numero positivo");
+                MessageBox.Show("El Precio Debe Ser Un Numero Positivo");
                 textInsertPrice.Clear();
                 return;
             }
 
             if (string.IsNullOrEmpty(stock) || !int.TryParse(stock, out int stk) || stk < 0)
             {
-                MessageBox.Show("El stock debe ser igual o mayor a 0");
+                MessageBox.Show("El Stock Debe Ser Igual o Mayor a 0");
                 textInsertStock.Clear();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(categoryValue)) 
             {
-                MessageBox.Show("Debe Selecionar una categoria");
+                MessageBox.Show("Debe Selecionar Una Categoria");
                 comboInsertCategory.Focus();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(description))
             {
-                MessageBox.Show("Llenar El campo Descripcion");
+                MessageBox.Show("Llenar El Campo Descripcion");
                 textInsertDescription.Focus();
                 return;
             }
 
             if (db.Productos.Any(p => p.ProductoID == id))
             {
-                MessageBox.Show($"Ya existe una categoría con el ID {id}.");
+                MessageBox.Show($"Ya Existe Una Categoría Con El ID {id}");
                 textInsertID.Focus();
                 return;
             }
@@ -143,7 +143,7 @@ namespace ORM_Manejo
                 db.Productos.Add(product);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Insertar");
+                MessageBox.Show("Exito Al Insertar");
 
                 textInsertID.Clear();
                 textInsertName.Clear();
@@ -155,7 +155,7 @@ namespace ORM_Manejo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Insertar");
+                MessageBox.Show("Error Al Insertar");
             }
 
         }
@@ -166,7 +166,7 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("Debe Introducir un ID valido");
+                MessageBox.Show("Debe Introducir Un ID Valido");
                 textDeleteID.Focus();
                 return;
             }
@@ -177,14 +177,14 @@ namespace ORM_Manejo
 
                 if (product == null)
                 {
-                    MessageBox.Show($"No Existe producto con el ID {id}");
+                    MessageBox.Show($"No Existe Producto Con El ID {id}");
                     return;
                 }
 
                 db.Productos.Remove(product);
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Eliminar");
+                MessageBox.Show("Exito Al Eliminar");
 
                 textDeleteID.Clear();
                 LoadProduct();
@@ -192,7 +192,7 @@ namespace ORM_Manejo
             }
             catch  (Exception ex) 
             {
-                MessageBox.Show("Error al Eliminar");
+                MessageBox.Show("Error Al Eliminar");
             }
 
         }
@@ -208,7 +208,7 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(IDtext) || !int.TryParse(IDtext, out int id) || id < 1)
             {
-                MessageBox.Show("El ID debe ser un numero positivo");
+                MessageBox.Show("El ID Debe Ser Un Numero Positivo");
                 textUpdateID.Clear();
                 return;
             }
@@ -222,21 +222,21 @@ namespace ORM_Manejo
 
             if (string.IsNullOrEmpty(price) || !decimal.TryParse(price, out decimal prc) || prc < 1)
             {
-                MessageBox.Show("El precio debe ser un numero positivo");
+                MessageBox.Show("El Precio Debe Ser Un Numero Positivo");
                 textUpdatePrice.Clear();
                 return;
             }
 
             if (string.IsNullOrEmpty(stock) || !int.TryParse(stock, out int stk) || stk < 0)
             {
-                MessageBox.Show("El stock debe ser igual o mayor a 0");
+                MessageBox.Show("El Stock Debe Ser Igual o Mayor a 0");
                 textUpdateStock.Clear();
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(categoryValue))
             {
-                MessageBox.Show("Debe Selecionar una categoria");
+                MessageBox.Show("Debe Selecionar una Categoria");
                 comboUpdateCategory.Focus();
                 return;
             }
@@ -255,7 +255,7 @@ namespace ORM_Manejo
 
                 if (product == null)
                 {
-                    MessageBox.Show($"No existe un producto con el ID {id}");
+                    MessageBox.Show($"No Existe Un Producto Con El ID {id}");
                     return;
                 }
 
@@ -267,7 +267,7 @@ namespace ORM_Manejo
 
                 db.SaveChanges();
 
-                MessageBox.Show("Exito al Insertar");
+                MessageBox.Show("Exito Al Insertar");
 
                 textUpdateID.Clear();
                 textUpdateName.Clear();
@@ -279,7 +279,7 @@ namespace ORM_Manejo
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Insertar");
+                MessageBox.Show("Error Al Insertar");
             }
 
 
