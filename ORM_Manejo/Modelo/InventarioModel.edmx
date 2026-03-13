@@ -388,7 +388,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LP2Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LP2Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categorias" EntityType="Self.Categoria" />
           <EntitySet Name="Clientes" EntityType="Self.Cliente" />
           <EntitySet Name="Compras" EntityType="Self.Compra" />
@@ -431,7 +431,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LP2ModelStoreContainer" CdmEntityContainer="LP2Entities">
+        <EntityContainerMapping StorageEntityContainer="LP2ModelStoreContainer" CdmEntityContainer="LP2Entities1">
           <EntitySetMapping Name="Categorias">
             <EntityTypeMapping TypeName="LP2Model.Categoria">
               <MappingFragment StoreEntitySet="Categorias">

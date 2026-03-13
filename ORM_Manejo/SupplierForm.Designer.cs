@@ -42,7 +42,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textDeleteID = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Screen = new System.Windows.Forms.DataGridView();
             this.buttonShow = new System.Windows.Forms.Button();
@@ -53,9 +53,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textUpdateEmail = new System.Windows.Forms.TextBox();
             this.textUpdatePhone = new System.Windows.Forms.TextBox();
-            this.textUpdateIID = new System.Windows.Forms.TextBox();
+            this.textUpdateID = new System.Windows.Forms.TextBox();
             this.textUpdateName = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -153,12 +153,13 @@
             this.buttonInsert.TabIndex = 0;
             this.buttonInsert.Text = "Insertar";
             this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.textDeleteID);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.buttonDelete);
             this.groupBox2.Location = new System.Drawing.Point(389, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 189);
@@ -182,14 +183,15 @@
             this.textDeleteID.Size = new System.Drawing.Size(188, 22);
             this.textDeleteID.TabIndex = 1;
             // 
-            // button2
+            // buttonDelete
             // 
-            this.button2.Location = new System.Drawing.Point(6, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 51);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDelete.Location = new System.Drawing.Point(6, 70);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(188, 51);
+            this.buttonDelete.TabIndex = 0;
+            this.buttonDelete.Text = "Eliminar";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // groupBox3
             // 
@@ -220,6 +222,7 @@
             this.buttonShow.TabIndex = 0;
             this.buttonShow.Text = "Mostrar";
             this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // groupBox4
             // 
@@ -229,9 +232,9 @@
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.textUpdateEmail);
             this.groupBox4.Controls.Add(this.textUpdatePhone);
-            this.groupBox4.Controls.Add(this.textUpdateIID);
+            this.groupBox4.Controls.Add(this.textUpdateID);
             this.groupBox4.Controls.Add(this.textUpdateName);
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.buttonUpdate);
             this.groupBox4.Location = new System.Drawing.Point(595, 0);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(383, 189);
@@ -289,12 +292,12 @@
             this.textUpdatePhone.Size = new System.Drawing.Size(178, 22);
             this.textUpdatePhone.TabIndex = 3;
             // 
-            // textUpdateIID
+            // textUpdateID
             // 
-            this.textUpdateIID.Location = new System.Drawing.Point(12, 40);
-            this.textUpdateIID.Name = "textUpdateIID";
-            this.textUpdateIID.Size = new System.Drawing.Size(178, 22);
-            this.textUpdateIID.TabIndex = 2;
+            this.textUpdateID.Location = new System.Drawing.Point(12, 40);
+            this.textUpdateID.Name = "textUpdateID";
+            this.textUpdateID.Size = new System.Drawing.Size(178, 22);
+            this.textUpdateID.TabIndex = 2;
             // 
             // textUpdateName
             // 
@@ -303,14 +306,15 @@
             this.textUpdateName.Size = new System.Drawing.Size(178, 22);
             this.textUpdateName.TabIndex = 1;
             // 
-            // button3
+            // buttonUpdate
             // 
-            this.button3.Location = new System.Drawing.Point(12, 115);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(362, 51);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Insertar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Location = new System.Drawing.Point(12, 115);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(362, 51);
+            this.buttonUpdate.TabIndex = 0;
+            this.buttonUpdate.Text = "Actualizar";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // SupplierForm
             // 
@@ -323,6 +327,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SupplierForm";
             this.Text = "SupplierForm";
+            this.Load += new System.EventHandler(this.SupplierForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -351,7 +356,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textDeleteID;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView Screen;
         private System.Windows.Forms.Button buttonShow;
@@ -362,8 +367,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textUpdateEmail;
         private System.Windows.Forms.TextBox textUpdatePhone;
-        private System.Windows.Forms.TextBox textUpdateIID;
+        private System.Windows.Forms.TextBox textUpdateID;
         private System.Windows.Forms.TextBox textUpdateName;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonUpdate;
     }
 }

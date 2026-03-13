@@ -130,6 +130,7 @@
             this.buttonInsert.TabIndex = 5;
             this.buttonInsert.Text = "Insertar";
             this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // label5
             // 
@@ -203,6 +204,7 @@
             this.buttonDelete.TabIndex = 2;
             this.buttonDelete.Text = "Eliminar";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // label6
             // 
@@ -232,6 +234,7 @@
             this.buttonShow.TabIndex = 1;
             this.buttonShow.Text = "Mostrar";
             this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // Screen
             // 
@@ -306,6 +309,7 @@
             this.buttonUpdate.TabIndex = 5;
             this.buttonUpdate.Text = "Actualizar";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // label12
             // 
@@ -363,6 +367,7 @@
             this.Controls.Add(this.gropuBox);
             this.Name = "ClientForm";
             this.Text = "ClientForm";
+            this.Load += new System.EventHandler(this.ClientForm_Load);
             this.gropuBox.ResumeLayout(false);
             this.gropuBox.PerformLayout();
             this.groupBox2.ResumeLayout(false);

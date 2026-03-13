@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|c:\\users\\migue\\onedrive\\desktop\\unit 4\\unit-4\\orm_manejo\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|c:\\users\\migue\\onedrive\\desktop\\unit 4\\unit-4\\orm_manejo\\supplierform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|solutionrelative:supplierform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|c:\\users\\migue\\onedrive\\desktop\\unit 4\\unit-4\\orm_manejo\\modelo\\inventariomodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|solutionrelative:modelo\\inventariomodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|c:\\users\\migue\\onedrive\\desktop\\unit 4\\unit-4\\orm_manejo\\categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|solutionrelative:categoryform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|c:\\users\\migue\\onedrive\\desktop\\unit 4\\unit-4\\orm_manejo\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3E2983DD-A6AE-4187-80F5-66563CE8268D}|ORM_Manejo.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,6 +27,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SupplierForm.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\SupplierForm.cs",
+              "RelativeDocumentMoniker": "SupplierForm.cs",
+              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\SupplierForm.cs",
+              "RelativeToolTip": "SupplierForm.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T02:46:52.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoryForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\CategoryForm.cs",
+              "RelativeDocumentMoniker": "CategoryForm.cs",
+              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\CategoryForm.cs [Design]",
+              "RelativeToolTip": "CategoryForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T02:43:51.082Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -31,18 +60,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T23:19:36.89Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InventarioModel.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\Modelo\\InventarioModel.edmx",
-              "RelativeDocumentMoniker": "Modelo\\InventarioModel.edmx",
-              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\Unit 4\\Unit-4\\ORM_Manejo\\Modelo\\InventarioModel.edmx [Diagram1]",
-              "RelativeToolTip": "Modelo\\InventarioModel.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2026-03-11T22:16:22.06Z",
-              "EditorCaption": " [Diagram1]"
             }
           ]
         }

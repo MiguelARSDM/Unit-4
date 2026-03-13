@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textInsertName = new System.Windows.Forms.TextBox();
+            this.textInsertID = new System.Windows.Forms.TextBox();
+            this.buttonInsert = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.buttonShow = new System.Windows.Forms.Button();
-            this.buttonInsert = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
             this.textDeleteID = new System.Windows.Forms.TextBox();
-            this.textInsertID = new System.Windows.Forms.TextBox();
-            this.textInsertName = new System.Windows.Forms.TextBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Screen = new System.Windows.Forms.DataGridView();
+            this.buttonShow = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textUpdateName = new System.Windows.Forms.TextBox();
             this.textUpdateID = new System.Windows.Forms.TextBox();
@@ -70,6 +70,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Insertar";
             // 
+            // textInsertName
+            // 
+            this.textInsertName.Location = new System.Drawing.Point(9, 88);
+            this.textInsertName.Name = "textInsertName";
+            this.textInsertName.Size = new System.Drawing.Size(265, 22);
+            this.textInsertName.TabIndex = 4;
+            // 
+            // textInsertID
+            // 
+            this.textInsertID.Location = new System.Drawing.Point(9, 44);
+            this.textInsertID.Name = "textInsertID";
+            this.textInsertID.Size = new System.Drawing.Size(265, 22);
+            this.textInsertID.TabIndex = 3;
+            // 
+            // buttonInsert
+            // 
+            this.buttonInsert.Location = new System.Drawing.Point(9, 125);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(265, 50);
+            this.buttonInsert.TabIndex = 2;
+            this.buttonInsert.Text = "Insertar";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre de la Categoria";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textDeleteID);
@@ -82,6 +124,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Eliminar";
             // 
+            // textDeleteID
+            // 
+            this.textDeleteID.Location = new System.Drawing.Point(9, 44);
+            this.textDeleteID.Name = "textDeleteID";
+            this.textDeleteID.Size = new System.Drawing.Size(185, 22);
+            this.textDeleteID.TabIndex = 2;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(9, 74);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(185, 50);
+            this.buttonDelete.TabIndex = 1;
+            this.buttonDelete.Text = "Eliminar";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "ID";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.Screen);
@@ -93,81 +161,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mostrar";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre de la Categoria";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "ID";
-            // 
-            // buttonShow
-            // 
-            this.buttonShow.Location = new System.Drawing.Point(295, 21);
-            this.buttonShow.Name = "buttonShow";
-            this.buttonShow.Size = new System.Drawing.Size(191, 23);
-            this.buttonShow.TabIndex = 0;
-            this.buttonShow.Text = "Mostrar";
-            this.buttonShow.UseVisualStyleBackColor = true;
-            // 
-            // buttonInsert
-            // 
-            this.buttonInsert.Location = new System.Drawing.Point(9, 125);
-            this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(265, 50);
-            this.buttonInsert.TabIndex = 2;
-            this.buttonInsert.Text = "Insertar";
-            this.buttonInsert.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(9, 74);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(185, 50);
-            this.buttonDelete.TabIndex = 1;
-            this.buttonDelete.Text = "Eliminar";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            // 
-            // textDeleteID
-            // 
-            this.textDeleteID.Location = new System.Drawing.Point(9, 44);
-            this.textDeleteID.Name = "textDeleteID";
-            this.textDeleteID.Size = new System.Drawing.Size(185, 22);
-            this.textDeleteID.TabIndex = 2;
-            // 
-            // textInsertID
-            // 
-            this.textInsertID.Location = new System.Drawing.Point(9, 44);
-            this.textInsertID.Name = "textInsertID";
-            this.textInsertID.Size = new System.Drawing.Size(265, 22);
-            this.textInsertID.TabIndex = 3;
-            // 
-            // textInsertName
-            // 
-            this.textInsertName.Location = new System.Drawing.Point(9, 88);
-            this.textInsertName.Name = "textInsertName";
-            this.textInsertName.Size = new System.Drawing.Size(265, 22);
-            this.textInsertName.TabIndex = 4;
-            // 
             // Screen
             // 
             this.Screen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -177,6 +170,16 @@
             this.Screen.RowTemplate.Height = 24;
             this.Screen.Size = new System.Drawing.Size(757, 177);
             this.Screen.TabIndex = 1;
+            // 
+            // buttonShow
+            // 
+            this.buttonShow.Location = new System.Drawing.Point(295, 21);
+            this.buttonShow.Name = "buttonShow";
+            this.buttonShow.Size = new System.Drawing.Size(191, 23);
+            this.buttonShow.TabIndex = 0;
+            this.buttonShow.Text = "Mostrar";
+            this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // groupBox4
             // 
@@ -214,6 +217,7 @@
             this.buttonUpdate.TabIndex = 2;
             this.buttonUpdate.Text = "Actualizar";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // label4
             // 
@@ -244,6 +248,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "CategoryForm";
             this.Text = "CategoryForm";
+            this.Load += new System.EventHandler(this.CategoryForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

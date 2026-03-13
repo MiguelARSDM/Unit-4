@@ -13,10 +13,10 @@ namespace ORM_Manejo.Modelo
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LP2Entities : DbContext
+    public partial class LP2Entities1 : DbContext
     {
-        public LP2Entities()
-            : base("name=LP2Entities")
+        public LP2Entities1()
+            : base("name=LP2Entities1")
         {
         }
     

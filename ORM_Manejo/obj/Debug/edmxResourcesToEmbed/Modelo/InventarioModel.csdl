@@ -177,7 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="LP2Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="LP2Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Categorias" EntityType="Self.Categoria" />
     <EntitySet Name="Clientes" EntityType="Self.Cliente" />
     <EntitySet Name="Compras" EntityType="Self.Compra" />

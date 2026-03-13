@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textnsertCategory = new System.Windows.Forms.TextBox();
-            this.textnsertName = new System.Windows.Forms.TextBox();
             this.textInsertID = new System.Windows.Forms.TextBox();
             this.textInsertStock = new System.Windows.Forms.TextBox();
-            this.textnsertDescription = new System.Windows.Forms.TextBox();
+            this.textInsertDescription = new System.Windows.Forms.TextBox();
             this.textInsertPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,11 +46,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Screen = new System.Windows.Forms.DataGridView();
             this.buttonShow = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textUpdateCategory = new System.Windows.Forms.TextBox();
-            this.textUpdateName = new System.Windows.Forms.TextBox();
             this.textUpdateID = new System.Windows.Forms.TextBox();
             this.textUpdateStock = new System.Windows.Forms.TextBox();
             this.textUpdateDescription = new System.Windows.Forms.TextBox();
@@ -64,20 +60,24 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.textUpdateName = new System.Windows.Forms.TextBox();
+            this.textInsertName = new System.Windows.Forms.TextBox();
+            this.comboInsertCategory = new System.Windows.Forms.ComboBox();
+            this.comboUpdateCategory = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Screen)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textnsertCategory);
-            this.groupBox1.Controls.Add(this.textnsertName);
+            this.groupBox1.Controls.Add(this.comboInsertCategory);
+            this.groupBox1.Controls.Add(this.textInsertName);
             this.groupBox1.Controls.Add(this.textInsertID);
             this.groupBox1.Controls.Add(this.textInsertStock);
-            this.groupBox1.Controls.Add(this.textnsertDescription);
+            this.groupBox1.Controls.Add(this.textInsertDescription);
             this.groupBox1.Controls.Add(this.textInsertPrice);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -93,20 +93,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Insertar";
             // 
-            // textnsertCategory
-            // 
-            this.textnsertCategory.Location = new System.Drawing.Point(134, 85);
-            this.textnsertCategory.Name = "textnsertCategory";
-            this.textnsertCategory.Size = new System.Drawing.Size(253, 22);
-            this.textnsertCategory.TabIndex = 12;
-            // 
-            // textnsertName
-            // 
-            this.textnsertName.Location = new System.Drawing.Point(134, 37);
-            this.textnsertName.Name = "textnsertName";
-            this.textnsertName.Size = new System.Drawing.Size(253, 22);
-            this.textnsertName.TabIndex = 11;
-            // 
             // textInsertID
             // 
             this.textInsertID.Location = new System.Drawing.Point(9, 37);
@@ -121,12 +107,12 @@
             this.textInsertStock.Size = new System.Drawing.Size(119, 22);
             this.textInsertStock.TabIndex = 9;
             // 
-            // textnsertDescription
+            // textInsertDescription
             // 
-            this.textnsertDescription.Location = new System.Drawing.Point(134, 129);
-            this.textnsertDescription.Name = "textnsertDescription";
-            this.textnsertDescription.Size = new System.Drawing.Size(253, 22);
-            this.textnsertDescription.TabIndex = 8;
+            this.textInsertDescription.Location = new System.Drawing.Point(134, 129);
+            this.textInsertDescription.Name = "textInsertDescription";
+            this.textInsertDescription.Size = new System.Drawing.Size(253, 22);
+            this.textInsertDescription.TabIndex = 8;
             // 
             // textInsertPrice
             // 
@@ -197,6 +183,7 @@
             this.buttonInsert.TabIndex = 0;
             this.buttonInsert.Text = "Insertar";
             this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // groupBox2
             // 
@@ -234,10 +221,11 @@
             this.buttonDelete.TabIndex = 0;
             this.buttonDelete.Text = "Eliminar";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.Screen);
             this.groupBox3.Controls.Add(this.buttonShow);
             this.groupBox3.Location = new System.Drawing.Point(0, 245);
             this.groupBox3.Name = "groupBox3";
@@ -246,14 +234,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mostrar";
             // 
-            // dataGridView1
+            // Screen
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 57);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 234);
-            this.dataGridView1.TabIndex = 1;
+            this.Screen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Screen.Location = new System.Drawing.Point(9, 57);
+            this.Screen.Name = "Screen";
+            this.Screen.RowHeadersWidth = 51;
+            this.Screen.Size = new System.Drawing.Size(1030, 234);
+            this.Screen.TabIndex = 1;
             // 
             // buttonShow
             // 
@@ -263,10 +251,11 @@
             this.buttonShow.TabIndex = 0;
             this.buttonShow.Text = "Mostrar";
             this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textUpdateCategory);
+            this.groupBox4.Controls.Add(this.comboUpdateCategory);
             this.groupBox4.Controls.Add(this.textUpdateName);
             this.groupBox4.Controls.Add(this.textUpdateID);
             this.groupBox4.Controls.Add(this.textUpdateStock);
@@ -285,20 +274,6 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Insertar";
-            // 
-            // textUpdateCategory
-            // 
-            this.textUpdateCategory.Location = new System.Drawing.Point(134, 85);
-            this.textUpdateCategory.Name = "textUpdateCategory";
-            this.textUpdateCategory.Size = new System.Drawing.Size(253, 22);
-            this.textUpdateCategory.TabIndex = 12;
-            // 
-            // textUpdateName
-            // 
-            this.textUpdateName.Location = new System.Drawing.Point(134, 37);
-            this.textUpdateName.Name = "textUpdateName";
-            this.textUpdateName.Size = new System.Drawing.Size(253, 22);
-            this.textUpdateName.TabIndex = 11;
             // 
             // textUpdateID
             // 
@@ -390,6 +365,37 @@
             this.buttonUpdate.TabIndex = 0;
             this.buttonUpdate.Text = "Actualizar";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // textUpdateName
+            // 
+            this.textUpdateName.Location = new System.Drawing.Point(134, 37);
+            this.textUpdateName.Name = "textUpdateName";
+            this.textUpdateName.Size = new System.Drawing.Size(253, 22);
+            this.textUpdateName.TabIndex = 11;
+            // 
+            // textInsertName
+            // 
+            this.textInsertName.Location = new System.Drawing.Point(134, 37);
+            this.textInsertName.Name = "textInsertName";
+            this.textInsertName.Size = new System.Drawing.Size(253, 22);
+            this.textInsertName.TabIndex = 11;
+            // 
+            // comboInsertCategory
+            // 
+            this.comboInsertCategory.FormattingEnabled = true;
+            this.comboInsertCategory.Location = new System.Drawing.Point(134, 83);
+            this.comboInsertCategory.Name = "comboInsertCategory";
+            this.comboInsertCategory.Size = new System.Drawing.Size(253, 24);
+            this.comboInsertCategory.TabIndex = 12;
+            // 
+            // comboUpdateCategory
+            // 
+            this.comboUpdateCategory.FormattingEnabled = true;
+            this.comboUpdateCategory.Location = new System.Drawing.Point(134, 83);
+            this.comboUpdateCategory.Name = "comboUpdateCategory";
+            this.comboUpdateCategory.Size = new System.Drawing.Size(253, 24);
+            this.comboUpdateCategory.TabIndex = 13;
             // 
             // ProductForm
             // 
@@ -402,12 +408,13 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ProductForm";
             this.Text = "ProductForm";
+            this.Load += new System.EventHandler(this.ProductForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Screen)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -417,11 +424,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textnsertCategory;
-        private System.Windows.Forms.TextBox textnsertName;
         private System.Windows.Forms.TextBox textInsertID;
         private System.Windows.Forms.TextBox textInsertStock;
-        private System.Windows.Forms.TextBox textnsertDescription;
+        private System.Windows.Forms.TextBox textInsertDescription;
         private System.Windows.Forms.TextBox textInsertPrice;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -436,11 +441,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Screen;
         private System.Windows.Forms.Button buttonShow;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textUpdateCategory;
-        private System.Windows.Forms.TextBox textUpdateName;
         private System.Windows.Forms.TextBox textUpdateID;
         private System.Windows.Forms.TextBox textUpdateStock;
         private System.Windows.Forms.TextBox textUpdateDescription;
@@ -452,5 +455,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.ComboBox comboInsertCategory;
+        private System.Windows.Forms.TextBox textInsertName;
+        private System.Windows.Forms.TextBox textUpdateName;
+        private System.Windows.Forms.ComboBox comboUpdateCategory;
     }
 }
